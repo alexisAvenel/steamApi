@@ -8,8 +8,10 @@
         "php": ">=5.5.9",
         "cakephp/cakephp": "3.3.*",
         "mobiledetect/mobiledetectlib": "2.*",
-        "cakephp/migrations": "~1.0",
-        "cakephp/plugin-installer": "*"
+        "cakephp/migrations": "@stable",
+        "cakephp/plugin-installer": "*",
+        "zyberspace/steam-web-api-client": "^0.4.0",
+        "holt59/cakephp3-bootstrap-helpers": "dev-master"
     },
     "require-dev": {
         "psy/psysh": "@stable",

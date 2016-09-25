@@ -9,3 +9,5 @@
     RewriteRule    ^$    webroot/    [L]
     RewriteRule    (.*) webroot/$1    [L]
 </IfModule>
+
+SetEnv STEAM_API_KEY "A5FE6E672DD1E6EA20E086E02EE12ED2"

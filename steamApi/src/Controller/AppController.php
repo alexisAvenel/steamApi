@@ -28,29 +28,48 @@ use Cake\Event\Event;
 class AppController extends Controller
 {
 
-    /**
-     * Initialization hook method.
-     *
-     * Use this method to add common initialization code like loading components.
-     *
-     * e.g. `$this->loadComponent('Security');`
-     *
-     * @return void
-     */
+    public $helpers = [
+        'Html' => [
+            'className' => 'Bootstrap.BootstrapHtml'
+        ],
+        'Form' => [
+            'className' => 'Bootstrap.BootstrapForm'
+        ],
+        'Paginator' => [
+            'className' => 'Bootstrap.BootstrapPaginator'
+        ],
+        'Modal' => [
+            'className' => 'Bootstrap.BootstrapModal'
+        ]
+    ];
+
     public function initialize()
     {
         parent::initialize();
 
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
+        $this->loadComponent('Auth', [
+            'authorize' => ['Controller'],
+            'authenticate' => [
+                'Form' => [
+                    'fields' => ['username' => 'email']
+                ]
+            ],
+            'loginAction' => 'login',
+            'loginRedirect' => '/',
+            'logoutRedirect' => '/'
+        ]);
+
+        $user = $this->Auth->User() || null;
+        $this->set(compact('user'));
     }
 
-    /**
-     * Before render callback.
-     *
-     * @param \Cake\Event\Event $event The beforeRender event.
-     * @return void
-     */
+    public function beforeFilter(Event $event)
+    {
+        $this->Auth->deny();
+    }
+
     public function beforeRender(Event $event)
     {
         if (!array_key_exists('_serialize', $this->viewVars) &&
@@ -58,5 +77,23 @@ class AppController extends Controller
         ) {
             $this->set('_serialize', true);
         }
+    }
+
+    public function isAuthorized($user = null)
+    {
+        // Chacun des utilisateurs enregistrés peut accéder aux fonctions publiques
+        if (empty($this->request->params['prefix'])) {
+            return true;
+        }
+
+        return false;
+    }
+
+    protected function _getSteamClient() {
+        return new \Zyberspace\SteamWebApi\Client(STEAM_API_KEY);
+    }
+
+    protected function _getSteamUser() {
+        return new \Zyberspace\SteamWebApi\Interfaces\ISteamUser($this->_getSteamClient());
     }
 }
