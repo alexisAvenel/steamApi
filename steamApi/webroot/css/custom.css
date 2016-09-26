@@ -7,10 +7,10 @@ body {
     margin-bottom: 60px;
 }
 h1,h2,h3,h4,h5,h6 {
-    color: #02a8f3;
+    color: #02BDD5;
 }
 label.control-label {
-    color: rgba(0,0,0,0.8);
+    color: rgba(255,255,255,0.8);
 }
 .login-page {
     background: #fff url('../img/bg-login.jpg') center;
@@ -20,7 +20,6 @@ label.control-label {
     position: absolute;
 }
 .navbar-brand a {
-
     overflow: hidden;
     text-align: center;
 }
@@ -32,4 +31,28 @@ label.control-label {
     bottom: 0;
     width: 100%;
     height: 60px;
+}
+#hero-area:before {
+    background: rgba(0, 0, 0, 0.78);
+}
+#hero-area h1 {
+    color: #eee;
+}
+#hero-area.bg1 {
+    background: url(../img/slider-home/bg-1.jpg) no-repeat 50%;
+    background-position: bottom;
+    background-size: cover;
+    background-attachment: fixed;
+}
+#hero-area.bg2 {
+    background: url(../img/slider-home/bg-2.jpg) no-repeat 50%;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+#hero-area.bg3 {
+    background: url(../img/slider-home/bg-3.jpg) no-repeat 50%;
+    background-position: top;
+    background-size: cover;
+    background-attachment: fixed;
 }

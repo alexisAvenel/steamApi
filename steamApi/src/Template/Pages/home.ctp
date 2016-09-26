@@ -7,9 +7,7 @@ Slider Section Start
         <div class="row">
             <div class="col-md-6 col-sm-6">
                 <div class="block wow fadeInLeft" data-wow-delay=".3s" data-wow-duration="500ms">
-                    <h2>
-                    ABOUT ME
-                    </h2>
+                    <h2>LA TEAM</h2>
                     <p>
                         Hello, I’m a UI/UX Designer & Front End Developer from Victoria, Australia. I hold a master degree of Web Design from the World University.And scrambled it to make a type specimen book. It has survived not only five centuries
                     </p>

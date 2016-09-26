@@ -23,10 +23,8 @@
             <div class="main-menu">
                 <?php if($user): ?>
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="index.html" >Home</a>
-                    </li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="/" >Home</a></li>
+                    <li><a href="/news">Game News</a></li>
                     <li><a href="service.html">Service</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <span class="caret"></span></a>

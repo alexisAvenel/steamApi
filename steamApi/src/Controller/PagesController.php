@@ -40,6 +40,9 @@ class PagesController extends AppController
      */
     public function home()
     {
-
+        /*$this->_steamUser = $this->_getSteamUser();
+        $steamUser = $this->_steamUser->GetPlayerSummariesV2('76561197985568646');
+        debug($steamUser);
+        die();*/
     }
 }

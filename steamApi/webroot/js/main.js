@@ -39,26 +39,30 @@
     };
 }(jQuery));
 
-
-
 jQuery(document).ready(function(){
 	"use strict";
 	new WOW().init();
 
 
-(function(){
- jQuery('.smooth-scroll').scrollingTo();
-}());
+    (function(){
+        jQuery('.smooth-scroll').scrollingTo();
+    }());
 
 });
 
+initHomeSliderBackground = function(i = 2) {
+    var i = (i == 4) ? 1 : i;
 
-
+    window.setTimeout(function(){
+        $('#hero-area').removeClass().addClass('fadeInUp animated slide bg'+i);
+        initHomeSliderBackground(i+1);
+        window.setTimeout(function(){
+            $('#hero-area').removeClass('fadeInUp animated slide');
+        }, 4000);
+    }, 10000);
+};
 
 $(document).ready(function(){
-
-
-
 
     $(window).scroll(function () {
         if ($(window).scrollTop() > 50) {
@@ -71,17 +75,17 @@ $(document).ready(function(){
     });
 
     $("#clients-logo").owlCarousel({
- 
+
         itemsCustom : false,
         pagination : false,
         items : 5,
         autoplay: true,
 
-    })
+    });
+
+    initHomeSliderBackground();
 
 });
-
-
 
 // fancybox
 $(".fancybox").fancybox({
@@ -95,8 +99,8 @@ $(".fancybox").fancybox({
 
     closeClick : true,
     helpers : {
-        title : { 
-            type: 'inside' 
+        title : {
+            type: 'inside'
         },
         overlay : {
             css : {
@@ -105,14 +109,3 @@ $(".fancybox").fancybox({
         }
     }
 });
-
-
-
-
-
-
- 
-
-
-
-

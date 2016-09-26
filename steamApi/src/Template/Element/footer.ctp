@@ -5,7 +5,7 @@ Footer Section Start
 <footer id="footer" class="footer">
     <div class="container">
         <div class="col-md-8">
-            <p class="copyright">Copyright: <span>2015</span> . Design and Developed by <a href="https://www.themefisher.com/free-bootstrap-templates/">Themefisher</a></p>
+            <p class="copyright">Copyright: <span><?= date('Y') ?></span> . Design and Developed by <a href="https://www.alexisavenel.fr/">Alexis Avenel</a></p>
         </div>
         <div class="col-md-4">
             <!-- Social Media -->
